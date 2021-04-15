@@ -1,17 +1,19 @@
 /*styling for the fixed button in the bottom left before click */
-#reactButton{
+#reactContainer{
     position:            fixed;
     left:                10px;
     bottom:              10px;
-    width:               5rem;
+    width:               12rem;
     height:              5rem;
-    border-radius:       20px;
-    z-index:             99999;
+
+    /* z-index:             99999; */
     background-repeat:   no-repeat !important;
     background-position: center !important;
     background-size:     cover !important;
+
     /* attempting to put the selected emotion span at the bottom */
-    display:flex;
+    
+    display:            flex;
     flex-direction:     column;
     justify-content:    space-around;
     cursor:             pointer;
@@ -19,8 +21,92 @@
     
     --react-type: "none";
 }
+
+#reactButtonContainer{
+    position: absolute;
+    top:      0; 
+    left:     0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    margin: auto;
+
+    display: flex;
+    justify-content: flex-start;
+    /* 
+    flex-direction:     column;
+    justify-content:    space-around; */
+}
+
+#cloudSVG{
+    height: 4em;
+    width: 5em;
+    padding-left: 1em;
+    padding-right: 1.5em;
+
+    top:0;
+    bottom:0;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#reactButtonSVG{
+    height: 2em;
+    width: 2em;
+    padding-left: 1.5em;
+    padding-right: 1em;
+
+    top:0;
+    bottom:0;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#settingsSVG{
+    height: 1.2em;
+    width: 1.2em;
+    padding-left: 1.5em;
+    padding-right: 0.5em;
+
+    top:0;
+    bottom:0;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#containerSVG{
+    position: absolute;
+    top:      0; 
+    left:     0;
+    width: 100%;
+    height: 100%;
+}
+
+#gradientSVG{
+    position: absolute;
+    top:      0; 
+    left:     0;
+    /* position: absolute; */
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+#whiteBoxSVG{
+    position: absolute;
+    top:      0; 
+    left:     0;
+    /* position: absolute; */
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+    
+}
+
 /* the container containing all of the available reactions */
-#reactContainer{
+/* #reactContainer{
     display:               none;
     position:              fixed;
     border-radius:         20px;
@@ -32,14 +118,14 @@
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     padding:               .2rem;
     
-}
+} */
 /* styles div that just holds the logo for the react button */
-#logoWrapper{
+/* #logoWrapper{
     width: 100%;
     height: 100%;
 }
 /* styles div that holds react in the cloud after selection */
-#selectedReact{
+/* #selectedReact{
     position:           fixed;
     width:              1rem;
     height:             1rem;
@@ -67,10 +153,10 @@
     padding:    .2rem;
     text-align: center;
     cursor:     pointer;
-}
+} */
 
 /* styling for the unicode emotions themselves */
-.reactText:hover{
+/* .reactText:hover{
     animation:              selectGrow .2s;
     animation-fill-mode:    forwards;
     z-index:                100001;
@@ -82,10 +168,10 @@
     text-align:          center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; */
 }
 /* Setting animations for when user hovers over the react animation */
-#reactButton:hover #Smile{
+/* #reactButton:hover #Smile{
     animation: shrinkOut .7s;
     animation-fill-mode: forwards;
 }
@@ -116,9 +202,9 @@
 #Cloud-Shadow{
     animation: deselectShrink .7s;
     animation-fill-mode: forwards;
-}
+} */
 
-@keyframes selectGrow{
+/* @keyframes selectGrow{
     0% {
         transform-origin: 50% 50%;
         transform: scale(1);
@@ -127,8 +213,8 @@
         transform-origin: 50% 50%;
         transform: scale(1.3);
     }
-}
-@keyframes deselectShrink{
+} */
+/* @keyframes deselectShrink{
     0% {
         transform-origin: 50% 50%;
         transform: scale(1.3);
@@ -137,8 +223,8 @@
         transform-origin: 50% 50%;
         transform: scale(1);
     }
-}
-@keyframes shrinkOut{
+} */
+/* @keyframes shrinkOut{
     0% {
         transform-origin: 50% 50%;
         transform: scale(1);
@@ -147,8 +233,8 @@
         transform-origin: 50% 50%;
         transform: scale(0);
     }
-}
-@keyframes growIn{
+} */
+/* @keyframes growIn{
     0% {
         transform-origin: 50% 50%;
         transform: scale(0);
@@ -157,9 +243,9 @@
         transform-origin: 50% 50%;
         transform: scale(1);
     }
-}
+} */
 
 /* SVG styling */
-#buttonSVG{
+/* #buttonSVG{
     overflow: visible !important;
-}
+} */
