@@ -16,27 +16,7 @@ var reactButtonSVG = '<svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.
 
 var settingsSVG = ' <svg viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg"> <g filter="url(#filter0_d)"> <path d="M23.1182 10.6875C18.4869 10.6875 14.8057 14.3687 14.8057 19C14.8057 23.6312 18.4869 27.3125 23.1182 27.3125C27.7494 27.3125 31.4307 23.6312 31.4307 19C31.4307 14.3687 27.7494 10.6875 23.1182 10.6875ZM23.1182 24.9375C19.7932 24.9375 17.1807 22.325 17.1807 19C17.1807 15.675 19.7932 13.0625 23.1182 13.0625C26.4432 13.0625 29.0557 15.675 29.0557 19C29.0557 22.325 26.4432 24.9375 23.1182 24.9375Z" fill="white"/> <path d="M40.575 15.0813L37.25 14.0125L36.5375 12.2312L38.2 9.14375C38.5563 8.43125 38.4375 7.48125 37.8438 6.8875L34.9938 4.0375C34.4 3.44375 33.45 3.325 32.7375 3.68125L29.65 5.34375L27.8688 4.63125L26.8 1.30625C26.5625 0.59375 25.85 0 25.0188 0H20.9813C20.15 0 19.4375 0.59375 19.3188 1.425L18.25 4.75C17.5375 4.86875 16.9438 5.10625 16.35 5.4625L13.2625 3.8C12.55 3.44375 11.6 3.5625 11.0063 4.15625L8.15625 7.00625C7.5625 7.6 7.44375 8.55 7.8 9.2625L9.34375 12.2312C9.10625 12.825 8.86875 13.5375 8.63125 14.1312L5.30625 15.2C4.59375 15.4375 4 16.15 4 16.9812V21.0188C4 21.85 4.59375 22.5625 5.425 22.8L8.75 23.8687L9.4625 25.65L7.8 28.7375C7.44375 29.45 7.5625 30.4 8.15625 30.9937L11.0063 33.8438C11.6 34.4375 12.55 34.5562 13.2625 34.2L16.35 32.5375L18.1313 33.25L19.2 36.6938C19.4375 37.4062 20.15 38 20.9813 38H25.0188C25.85 38 26.5625 37.4062 26.8 36.6938L27.8688 33.25L29.65 32.5375L32.7375 34.2C33.45 34.5562 34.4 34.4375 34.9938 33.8438L37.8438 30.9937C38.4375 30.4 38.5563 29.45 38.2 28.7375L36.5375 25.65L37.25 23.8687L40.6938 22.8C41.4063 22.5625 42 21.85 42 21.0188V16.9812C42 16.15 41.4063 15.3187 40.575 15.0813ZM39.625 20.6625L35.35 21.9688L35.2313 22.5625L34.1625 25.0562L33.8063 25.65L35.9438 29.5688L33.5688 31.9438L29.65 29.8062L29.0563 30.1625C28.225 30.6375 27.3938 30.9937 26.5625 31.2312L25.9688 31.35L24.6625 35.625H21.3375L20.0313 31.35L19.4375 31.2312L16.9438 30.1625L16.35 29.8062L12.4313 31.9438L10.0563 29.5688L12.1938 25.65L11.8375 25.0562C11.3625 24.225 11.0063 23.3937 10.7688 22.5625L10.65 21.9688L6.375 20.6625V17.3375L10.4125 16.15L10.65 15.5563C10.8875 14.6063 11.2438 13.775 11.7188 12.9437L12.075 12.35L10.0563 8.43125L12.4313 6.05625L16.2313 8.19375L16.825 7.8375C17.6563 7.3625 18.4875 7.00625 19.4375 6.76875L20.0313 6.53125L21.3375 2.375H24.6625L25.9688 6.53125L26.5625 6.76875C27.3938 7.00625 28.225 7.3625 29.0563 7.8375L29.65 8.19375L33.5688 6.05625L35.9438 8.43125L33.8063 12.35L34.1625 12.9437C34.6375 13.775 34.9938 14.6062 35.2313 15.4375L35.35 16.0312L39.625 17.3375V20.6625Z" fill="white"/> </g> <defs> <filter id="filter0_d" x="0" y="0" width="46" height="46" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"> <feFlood flood-opacity="0" result="BackgroundImageFix"/> <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/> <feOffset dy="4"/> <feGaussianBlur stdDeviation="2"/> <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"/> <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/> <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/> </filter> </defs> </svg> '
 
-
-
-//SVG logo as a string, so it can be used as the innerhtml of a div
-// var cloudWithEmoji =  '<svg id="buttonSVG" viewBox="0 0 242 242" fill="none" xmlns="http://www.w3.org/2000/svg"> <g id="SmileySurfer"> <g id="Outline"> <g id="Rectangle 7"> <rect width="242" height="241" rx="56" fill="white"/> <rect width="242" height="241" rx="56" fill="url(#paint0_linear)"/> </g> </g> <g id="Cloud"> <path id="Vector" d="M206.594 105.932H206.575C206.575 105.806 206.594 105.679 206.594 105.552C206.594 88.2425 192.081 74.1956 174.156 74.1956C171.85 74.1956 169.6 74.4312 167.444 74.8844C161.013 59.7681 145.656 49.1106 127.694 49.1106C114.213 49.1106 102.194 55.1281 94.3188 64.5169C89.0907 61.9468 83.3091 60.6054 77.4438 60.6019C58.0375 60.6019 42.1001 74.8844 40.2438 93.1725C19.1501 94.26 2.2188 110.971 1.93755 131.724C1.63755 153.329 19.5438 171.092 41.8938 171.364C43.6376 171.382 45.3251 171.273 47.0126 171.074C55.6563 188.691 74.2 200.871 95.7063 200.871C108.681 200.871 120.569 196.431 129.869 189.054C136.975 194.147 145.75 197.192 155.275 197.192C174.813 197.192 191.256 184.522 196.375 167.213C199.6 168.246 203.031 168.826 206.613 168.826C224.575 168.826 239.144 154.743 239.144 137.379C239.125 120.016 224.575 105.932 206.594 105.932Z" fill="white"/> </g> <g id="Smile"> <g id="Smile_2"> <rect width="79" height="79" transform="translate(83 81)" fill="white"/> <g id="Vector_2"> <path d="M122.5 87.5833C104.35 87.5833 89.5833 102.35 89.5833 120.5C89.5833 138.65 104.35 153.417 122.5 153.417C140.65 153.417 155.417 138.65 155.417 120.5C155.417 102.35 140.65 87.5833 122.5 87.5833ZM122.5 146.833C107.98 146.833 96.1666 135.02 96.1666 120.5C96.1666 105.98 107.98 94.1667 122.5 94.1667C137.019 94.1667 148.833 105.98 148.833 120.5C148.833 135.02 137.019 146.833 122.5 146.833Z" fill="black"/> <path d="M122.5 87.5833C104.35 87.5833 89.5833 102.35 89.5833 120.5C89.5833 138.65 104.35 153.417 122.5 153.417C140.65 153.417 155.417 138.65 155.417 120.5C155.417 102.35 140.65 87.5833 122.5 87.5833ZM122.5 146.833C107.98 146.833 96.1666 135.02 96.1666 120.5C96.1666 105.98 107.98 94.1667 122.5 94.1667C137.019 94.1667 148.833 105.98 148.833 120.5C148.833 135.02 137.019 146.833 122.5 146.833Z" fill="url(#paint1_linear)"/> </g> <g id="Vector_3"> <path d="M131.812 129.809C130.609 131.008 129.188 131.967 127.625 132.633C124.812 133.821 121.673 133.994 118.746 133.124C115.819 132.253 113.285 130.392 111.578 127.86L106.121 131.544C107.544 133.644 109.355 135.454 111.456 136.876C113.595 138.322 115.998 139.332 118.527 139.848C121.15 140.383 123.853 140.383 126.476 139.848C129.005 139.331 131.408 138.321 133.547 136.876C134.577 136.178 135.561 135.368 136.463 134.47C137.359 133.578 138.175 132.59 138.879 131.544L133.422 127.86C132.949 128.56 132.41 129.212 131.812 129.809Z" fill="black"/> <path d="M131.812 129.809C130.609 131.008 129.188 131.967 127.625 132.633C124.812 133.821 121.673 133.994 118.746 133.124C115.819 132.253 113.285 130.392 111.578 127.86L106.121 131.544C107.544 133.644 109.355 135.454 111.456 136.876C113.595 138.322 115.998 139.332 118.527 139.848C121.15 140.383 123.853 140.383 126.476 139.848C129.005 139.331 131.408 138.321 133.547 136.876C134.577 136.178 135.561 135.368 136.463 134.47C137.359 133.578 138.175 132.59 138.879 131.544L133.422 127.86C132.949 128.56 132.41 129.212 131.812 129.809Z" fill="url(#paint2_linear)"/> </g> <g id="Vector_4"> <path d="M110.979 120.5C113.706 120.5 115.917 118.289 115.917 115.562C115.917 112.836 113.706 110.625 110.979 110.625C108.252 110.625 106.042 112.836 106.042 115.562C106.042 118.289 108.252 120.5 110.979 120.5Z" fill="black"/> <path d="M110.979 120.5C113.706 120.5 115.917 118.289 115.917 115.562C115.917 112.836 113.706 110.625 110.979 110.625C108.252 110.625 106.042 112.836 106.042 115.562C106.042 118.289 108.252 120.5 110.979 120.5Z" fill="url(#paint3_linear)"/> </g> <g id="Vector_5"> <path d="M133.998 120.454C136.712 120.454 138.912 118.254 138.912 115.539C138.912 112.825 136.712 110.625 133.998 110.625C131.284 110.625 129.083 112.825 129.083 115.539C129.083 118.254 131.284 120.454 133.998 120.454Z" fill="black"/> <path d="M133.998 120.454C136.712 120.454 138.912 118.254 138.912 115.539C138.912 112.825 136.712 110.625 133.998 110.625C131.284 110.625 129.083 112.825 129.083 115.539C129.083 118.254 131.284 120.454 133.998 120.454Z" fill="url(#paint4_linear)"/> </g> </g> </g> <g id="Cloud-Shadow"> <path id="Vector_6" d="M225.719 111.932C233.087 119.128 227.875 135.621 222.812 141.004C212.838 151.571 194.538 149.106 187.188 147.584C185.2 147.167 184.881 147.312 184.225 147.693C183.644 148.037 183.381 148.581 182.744 149.868C180.381 154.798 174.269 164.349 161.369 168.192C147.925 172.198 135.25 166.089 129.325 162.446C127.075 161.069 126.981 161.033 125.969 161.051C124.938 161.069 123.925 161.794 122.706 162.718C117.344 166.796 105.1 173.992 86.2188 172.941C67.7125 171.907 57.1188 160.888 53.4813 155.214C52.7875 154.127 52.0375 153.221 51.175 153.13C50.1813 153.039 49.075 154.018 48.25 154.816C40.375 162.229 15.5875 164.458 7.375 151.825C15.7375 164.784 28.6562 171.201 41.9125 171.364C43.6562 171.382 45.3438 171.273 47.0312 171.074C55.675 188.691 74.2188 200.871 95.725 200.871C108.7 200.871 120.587 196.431 129.887 189.054C136.994 194.147 145.769 197.192 155.294 197.192C174.831 197.192 191.275 184.523 196.394 167.213C199.619 168.246 203.05 168.826 206.631 168.826C224.594 168.826 239.162 154.743 239.162 137.379C239.125 128.136 234.325 117.696 225.719 111.932Z" fill="#7E98A8"/> </g> </g> <defs> <linearGradient id="paint0_linear" x1="121" y1="0" x2="121" y2="241" gradientUnits="userSpaceOnUse"> <stop offset="0.0913884" stop-color="#B7094C"/> <stop offset="0.317708" stop-color="#892B64"/> <stop offset="0.541667" stop-color="#5C4D7D"/> <stop offset="1" stop-color="#2E6F95"/> </linearGradient> <linearGradient id="paint1_linear" x1="122.5" y1="87.5833" x2="122.5" y2="153.417" gradientUnits="userSpaceOnUse"> <stop offset="0.0913884" stop-color="#B7094C"/> <stop offset="0.317708" stop-color="#892B64"/> <stop offset="0.541667" stop-color="#5C4D7D"/> <stop offset="1" stop-color="#2E6F95"/> </linearGradient> <linearGradient id="paint2_linear" x1="122.5" y1="127.86" x2="122.5" y2="140.25" gradientUnits="userSpaceOnUse"> <stop stop-color="#892B64"/> <stop offset="0.421875" stop-color="#5C4D7D"/> <stop offset="1" stop-color="#2E6F95"/> </linearGradient> <linearGradient id="paint3_linear" x1="110.979" y1="110.625" x2="110.979" y2="120.5" gradientUnits="userSpaceOnUse"> <stop offset="0.0913884" stop-color="#B7094C"/> <stop offset="0.546875" stop-color="#892B64"/> <stop offset="0.90625" stop-color="#5C4D7D"/> </linearGradient> <linearGradient id="paint4_linear" x1="133.998" y1="110.625" x2="133.998" y2="120.454" gradientUnits="userSpaceOnUse"> <stop offset="0.223958" stop-color="#B7094C"/> <stop offset="0.583333" stop-color="#892B64"/> <stop offset="0.770833" stop-color="#5C4D7D"/> <stop offset="1" stop-color="#2E6F95"/> </linearGradient> </defs> </svg>'
-// var cloudNoEmoji   =  '<svg id="buttonSVG" viewBox="0 0 242 241" fill="none" xmlns="http://www.w3.org/2000/svg"> <g id="Cloudsurf Icon"> <g id="Cloud-Background"> <g id="Rectangle 7"> <rect width="242" height="241" rx="56" fill="white"/> <rect width="242" height="241" rx="56" fill="url(#paint0_linear)"/> </g> </g> <g id="Cloud"> <path id="Vector" d="M206.594 105.932H206.575C206.575 105.806 206.594 105.679 206.594 105.552C206.594 88.2425 192.081 74.1956 174.156 74.1956C171.85 74.1956 169.6 74.4312 167.444 74.8844C161.013 59.7681 145.656 49.1106 127.694 49.1106C114.213 49.1106 102.194 55.1281 94.3188 64.5169C89.0907 61.9468 83.3091 60.6054 77.4438 60.6019C58.0375 60.6019 42.1001 74.8844 40.2438 93.1725C19.1501 94.26 2.2188 110.971 1.93755 131.724C1.63755 153.329 19.5438 171.092 41.8938 171.364C43.6376 171.382 45.3251 171.273 47.0126 171.074C55.6563 188.691 74.2 200.871 95.7063 200.871C108.681 200.871 120.569 196.431 129.869 189.054C136.975 194.147 145.75 197.192 155.275 197.192C174.813 197.192 191.256 184.522 196.375 167.213C199.6 168.246 203.031 168.826 206.613 168.826C224.575 168.826 239.144 154.743 239.144 137.379C239.125 120.016 224.575 105.932 206.594 105.932Z" fill="white"/> </g> <g id="Cloud-Shadow"> <path id="Vector_2" d="M225.719 111.932C233.087 119.128 227.875 135.621 222.812 141.004C212.838 151.571 194.538 149.106 187.188 147.584C185.2 147.167 184.881 147.312 184.225 147.693C183.644 148.037 183.381 148.581 182.744 149.868C180.381 154.798 174.269 164.349 161.369 168.192C147.925 172.198 135.25 166.089 129.325 162.446C127.075 161.069 126.981 161.033 125.969 161.051C124.938 161.069 123.925 161.794 122.706 162.718C117.344 166.796 105.1 173.992 86.2188 172.941C67.7125 171.907 57.1188 160.888 53.4813 155.214C52.7875 154.127 52.0375 153.221 51.175 153.13C50.1813 153.039 49.075 154.018 48.25 154.816C40.375 162.229 15.5875 164.458 7.375 151.825C15.7375 164.784 28.6562 171.201 41.9125 171.364C43.6562 171.382 45.3438 171.273 47.0312 171.074C55.675 188.691 74.2188 200.871 95.725 200.871C108.7 200.871 120.587 196.431 129.887 189.054C136.994 194.147 145.769 197.192 155.294 197.192C174.831 197.192 191.275 184.523 196.394 167.213C199.619 168.246 203.05 168.826 206.631 168.826C224.594 168.826 239.162 154.743 239.162 137.379C239.125 128.136 234.325 117.696 225.719 111.932Z" fill="#7E98A8"/> </g> </g> <defs> <linearGradient id="paint0_linear" x1="121" y1="0" x2="121" y2="241" gradientUnits="userSpaceOnUse"> <stop offset="0.0913884" stop-color="#B7094C"/> <stop offset="0.317708" stop-color="#892B64"/> <stop offset="0.541667" stop-color="#5C4D7D"/> <stop offset="1" stop-color="#2E6F95"/> </linearGradient> </defs> </svg> '
-
-//unicodes corresponding to emoticons
-// var emotions = [ 
-//     "128544",  //angry
-//     "128546",  //crying
-//     "128552",  //afraid
-//     "128562",  //astonished
-//     "128578",  //smiling
-//     "128525",  //love
-//     "128514",  //laugh
-//     "128526",  //chill
-//     "129320",  //oh?
-//    ];
-
-//----------------DOM RENDERING-------------------
-
+//----------------DATA MANAGEMENT-------------------
 
 // getting user identifiers and settings
 var email, userid, rows, cols, size;
@@ -52,10 +32,8 @@ chrome.storage.sync.get(['email', 'id','rows','cols','size'], function(result) {
 });
 
 
-// --------with extensions, we can't just write
-// --------HTML files, so we have to do it
-// --------ourselves. TODO implement "align" functionality
 
+//----------------DOM RENDERING-------------------
 
 // function: drawScreen
 // purpose:  instantiates all of the html necessary for the emotion tool
@@ -75,7 +53,6 @@ chrome.storage.sync.get(['email', 'id','rows','cols','size'], function(result) {
 //                  rows and columns that their array of emotions has
 function drawScreen(align, size, x, y, emoticons, rows, cols)
 {
-    alert("drawScreen");
     reactBox             = makeReactBox(size, x, y);
     reactButtonContainer = makeButtonContainer(size, x, y);
     reactBox.append(reactButtonContainer);
@@ -164,70 +141,6 @@ function makeButtonContainer(size, x, y)
     // logoWrapper.setAttribute('id',"logoWrapper");
     // logoWrapper.innerHTML    = cloudWithEmoji;
     // reactButton.append(logoWrapper);
-
-
-// function makeReacts
-// purpose: 
-//          make the react container and the reacts held within it,
-//          as well as any other buttons or functionality for the
-//          container.
-// arguments:
-//          align : "left" or "right" - a user preference that allows users
-//                  to describe the direction that the react container
-//                  should open in
-//          size  : integers that describes the scaling of the original button
-//                  (in rems) -> the reacts themselves will be scaled
-//                  proportionally
-//           x,y  : integers - a user preference that describes how far to
-//                  the right (x) and how far down up from the bottom (y) 
-//                  their emotion tool appears on each page
-//      emoticons : an array of emotion unicode strings corresponding to
-//                  emotions that will be rendered on button click
-//      rows, cols: integers - user preference that describes the numebr of
-//                  rows and columns that their array of emotions has
-// function makeReacts(align, size, x, y, emoticons, rows, cols)
-// {
-//     // make container to hold reactions
-//     var reactContainer = document.createElement( 'div' );
-//     reactContainer.setAttribute("id", "reactContainer");
-//     reactContainer.style.bottom = x+"%";
-//     reactContainer.style.left   = y+"%";
-
-//     reactContainer.style.setProperty('--grid-rows', rows);
-//     reactContainer.style.setProperty('--grid-cols', cols);
-
-//     for (emote in emoticons) {
-//         let react = document.createElement("div");
-//         react.innerHTML = htmlify(emoticons[emote])
-//         react.setAttribute("id", emoticons[emote]);
-//         react.style.fontSize = (size / 3) + "rem";
-//         react.onclick = function(e){ handleReact(e.target.getAttribute("id")); };
-//         reactContainer.appendChild(react).className = "grid-item reactText"
-//     }
-//     return reactContainer;
-// }
-
-// funciton makeSelectedReact
-// purpose: create the div that will hold the selected reaction
-// arguments:
-//          size  : integers that describes the scaling of the original button
-//                  (in rems) -> the reacts themselves will be scaled
-//                  proportionally
-//           x,y  : integers - a user preference that describes how far to
-//                  the right (x) and how far down up from the bottom (y) 
-//                  their emotion tool appears on each page
-// function makeSelectedReact(size)
-// {
-//     selectedReact = document.createElement("div");
-//     selectedReact.setAttribute("id","selectedReact");
-
-//     //dynamically set react and text size
-//     selectedReact.style.fontSize = ((3/10)*size)+'rem';
-//     selectedReact.style.height   = ((3/5) *size)+'rem';
-//     selectedReact.style.width    = ((3/5) *size)+'rem';
-
-//     return selectedReact;
-// }
 
 
 //-------------------FUNCTIONALITY------------------
