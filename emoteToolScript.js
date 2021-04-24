@@ -116,6 +116,7 @@ function makeButtonContainer(size, x, y)
     var reactButtonDiv       = document.createElement('div');
     reactButtonDiv.innerHTML = reactButtonSVG;
     reactButtonDiv.setAttribute('id',"reactButtonSVG")
+    reactButtonDiv.onclick   = handleReact('LIKE');
 
     var settingsDiv       = document.createElement('div');
     settingsDiv.innerHTML = settingsSVG;
