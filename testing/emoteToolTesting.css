@@ -26,19 +26,47 @@ main{
 }
 
 .button-contain{
+    z-index: 2;
     position: relative;
     width: inherit;
     height: inherit;
 }
+
+.react-wrap{
+    top:0;
+    left:0;
+    position: relative; 
+    height: 0; 
+    width: 40%; 
+    padding: 0;
+    padding-bottom: 100%; 
+}
 .react-button{
-    height:inherit;
+    position: absolute; 
+    height: calc(100% - 5rem);
+    padding-top:2.5rem;
+    padding-bottom:2.5rem;
+    left: 2.5rem; 
+    top:0;
+}
+.cloud-button{
+    position: absolute; 
+    height: calc(100% - 4rem);
+    padding-top:2rem;
+    padding-bottom:2rem; 
+    left: 10.5rem; 
+    top:0;
 }
 
 
+
 .background-contain{
-    position:relative;
+    z-index: 1;
+    position:absolute;
     height:inherit;
-    width:auto;
+    width:inherit;
+    top:0;
+    left:0;
 }
 .gradient-background, .white-background{
     position:absolute;
@@ -46,6 +74,7 @@ main{
     left:0px;
     height:inherit;
     width: auto;
+    overflow:visible;
 }
 .gradient-background{
     z-index: 0;
