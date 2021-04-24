@@ -230,7 +230,7 @@ function handleReact(reactType)
         console.error(req.statusText)
     };
     req.send(JSON.stringify(data))
-    closeReacts(reactType)
+    //closeReacts(reactType)
 }
 
 // setSelectedReact
