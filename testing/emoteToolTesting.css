@@ -1,0 +1,55 @@
+body{
+    background-color: cadetblue;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    position:fixed;
+    width: 24rem;
+    height: 10rem;
+    top:0px;
+    bottom:0px;
+    right: 0px;
+    left:0px;
+    height:10rem;
+    margin:auto;
+}
+
+.overlay-contain{
+    width: inherit;
+    height: inherit;
+    position: relative;
+}
+
+.button-contain{
+    position: relative;
+    width: inherit;
+    height: inherit;
+}
+.react-button{
+    height:inherit;
+}
+
+
+.background-contain{
+    position:relative;
+    height:inherit;
+    width:auto;
+}
+.gradient-background, .white-background{
+    position:absolute;
+    top:0px;
+    left:0px;
+    height:inherit;
+    width: auto;
+}
+.gradient-background{
+    z-index: 0;
+}
+.white-background{
+    z-index: 1;
+}
