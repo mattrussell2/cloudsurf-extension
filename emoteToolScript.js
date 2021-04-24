@@ -27,7 +27,7 @@ chrome.storage.sync.get(['email', 'id','rows','cols','size'], function(result) {
     cols   = result.cols;
     size   = result.size;
     //just actually calling drawScreen
-    drawScreen("left", size, 1, 1, emotions, rows, cols);
+    drawScreen("left", size, 1, 1);
     getUserReact(window.location.href, userid)
 });
 
@@ -47,11 +47,7 @@ chrome.storage.sync.get(['email', 'id','rows','cols','size'], function(result) {
 //           x,y  : integers - a user preference that describes how far to
 //                  the right (x) and how far down up from the bottom (y) 
 //                  their emotion tool appears on each page
-//      emoticons : an array of emotion unicode strings corresponding to
-//                  emotions that will be rendered on button click
-//      rows, cols: integers - user preference that describes the numebr of
-//                  rows and columns that their array of emotions has
-function drawScreen(align, size, x, y, emoticons, rows, cols)
+function drawScreen(align, size, x, y)
 {
     reactBox             = makeReactBox(size, x, y);
     reactButtonContainer = makeButtonContainer(size, x, y);
