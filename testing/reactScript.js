@@ -33,3 +33,7 @@ document.getElementsByClassName("dislike-button")[0].addEventListener("click", f
         disliked = true;
     }
 });
+document.getElementsByClassName("cloud-button")[0].addEventListener("click", function() {
+    // request for a page url
+    
+})
