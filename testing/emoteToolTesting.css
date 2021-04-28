@@ -57,8 +57,11 @@ main{
     height: 65%;
     top: 17.5%;
     left: 53%;
+    transition: transform 250ms;
 }
-
+.cloud-button:hover{
+    transform: scale(1.25, 1.25);
+}
 
 
 .background-contain{
