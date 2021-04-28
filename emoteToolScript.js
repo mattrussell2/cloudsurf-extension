@@ -4,6 +4,17 @@
 //  we think they may want to react to
 
 // ------------------DATA-------------------------
+var buttonHTML = '<!-- contains the entire reaction button --> <div class = "overlay-contain"> <!-- contains the svgs for buttons and their corresponding containers --> <div class = "button-contain"> <!-- like button --> <img class = "like-button" src="../images/LikeUnclicked.svg" alt="like button (unclicked)"> <!-- dislike button --> <img class = "dislike-button" src="../images/DislikeUnclicked.svg" alt="dislike button (unclicked)"> <!-- cloud button --> <img class = "cloud-button" src="../images/Cloud.svg" alt="cloud / next page button"> </div> <!-- contains the background svgs for the buttons --> <div class = "background-contain"> <!-- gradient background --> <svg class = "gradient-background" viewBox="0 0 800 250" fill="none" xmlns="http://www.w3.org/2000/svg"> <g filter="url(#filter0_d)"> <rect width="700" height="250" rx="28" fill="#C4C4C4"/> <rect width="700" height="250" rx="28" fill="url(#paint0_linear)"/> </g> <defs> <filter id="filter0_d" x="0" y="0" width="700" height="250" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"> <feFlood flood-opacity="0" result="BackgroundImageFix"/> <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/> <feOffset dy="4"/> <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/> <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/> <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/> </filter> <linearGradient id="paint0_linear" x1="301" y1="0" x2="301" y2="241" gradientUnits="userSpaceOnUse"> <stop offset="0.0913884" stop-color="#B7094C"/> <stop offset="0.317708" stop-color="#892B64"/> <stop offset="0.541667" stop-color="#5C4D7D"/> <stop offset="1" stop-color="#2E6F95"/> </linearGradient> </defs> </svg> <!-- white box background --> <svg class = "white-background" viewBox="0 0 800 250" fill="none" xmlns="http://www.w3.org/2000/svg"> <g filter="url(#filter0_d)"> <rect width="650" height="250" rx="28" fill="white"/> <rect width="650" height="250" rx="28" fill="white"/> </g> <defs> <filter id="filter0_d" x="0" y="0" width="650" height="250" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"> <feFlood flood-opacity="0" result="BackgroundImageFix"/> <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/> <feOffset dy="4"/> <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/> <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/> <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/> </filter> </defs> </svg> </div> </div>'
+
+
+//-----------------ADD BUTTON TO PAGE--------------
+function appendButton(size) {
+    wrap = document.createElement('div');
+    wrap.classList.add("cloudsurf-button-wrap");
+    wrap.innerHTML = buttonHTML;
+    document.body.append(wrap);
+}
+appendButton();
 
 
 //----------------DATA MANAGEMENT-------------------
@@ -17,7 +28,6 @@ chrome.storage.sync.get(['email', 'id','rows','cols','size'], function(result) {
     cols   = result.cols;
     size   = result.size;
     //just actually calling drawScreen
-    drawScreen("left", size, 1, 1);
     getUserReact(window.location.href, userid)
 });
 
@@ -26,6 +36,89 @@ chrome.storage.sync.get(['email', 'id','rows','cols','size'], function(result) {
 
 
 //-------------------FUNCTIONALITY------------------
+
+// this function gets around a weird technicality where we can't
+// just include images, and need to set them programmatically
+// (there might be a way around this, we just need to do more
+// research)
+function setImages() {
+    document.getElementsByClassName("dislike-button")[0].src = chrome.extension.getURL('../images/DislikeUnclicked.svg');
+    document.getElementsByClassName("like-button")[0].src = chrome.extension.getURL('../images/LikeUnclicked.svg');
+    document.getElementsByClassName("cloud-button")[0].src = chrome.extension.getURL('../images/Cloud.svg');
+}
+setImages()
+
+liked = false;
+disliked = false;
+
+// we can put the appropriate requests in here!
+function handleClick(id, clicked){
+    if (clicked && id == "dislike-button") {
+        document.getElementsByClassName("dislike-button")[0].src = chrome.extension.getURL('../images/DislikeUnclicked.svg');
+    }
+    else if(clicked && id == "like-button") {
+        document.getElementsByClassName("like-button")[0].src = chrome.extension.getURL('../images/LikeUnclicked.svg');
+    }
+    else if(!clicked && id == "dislike-button") {
+        document.getElementsByClassName("dislike-button")[0].src = chrome.extension.getURL('../images/DislikeClicked.svg');
+    }
+    else if (!clicked && id == "like-button") {
+        document.getElementsByClassName("like-button")[0].src = chrome.extension.getURL('../images/LikeClicked.svg');
+    }
+}
+
+// function setOnclicks
+// purpose: ensures that all elements in the button have proper functionality
+// note that with 1 or 2 helper functions, this can be significantly modularized
+function setOnclicks(){
+    document.getElementsByClassName("like-button")[0].addEventListener("click", function() {
+        if (disliked) {
+            handleClick("dislike-button", true)
+            handleClick("like-button", false)
+            document.getElementsByClassName("dislike-button")[0].classList.remove('clicked-button');
+            document.getElementsByClassName("like-button")[0].classList.add('clicked-button');
+            disliked = false;
+            liked = true;
+        }
+        else if (liked) {
+            handleClick("like-button", true);
+            document.getElementsByClassName("like-button")[0].classList.remove('clicked-button');
+            liked = false;
+        }
+        else {
+            handleClick("like-button", false)
+            document.getElementsByClassName("like-button")[0].classList.add('clicked-button');
+            liked = true;
+        }
+    });
+    document.getElementsByClassName("dislike-button")[0].addEventListener("click", function() {
+        if (liked) {
+            handleClick("like-button", true)
+            handleClick("dislike-button", false)
+            document.getElementsByClassName("like-button")[0].classList.remove('clicked-button');
+            document.getElementsByClassName("dislike-button")[0].classList.add('clicked-button');
+            disliked = true;
+            liked = false;
+        }
+        else if (disliked) {
+            handleClick("dislike-button", true)
+            document.getElementsByClassName("dislike-button")[0].classList.remove('clicked-button');
+            disliked = false;
+        }
+        else {
+            handleClick("dislike-button",false);
+            document.getElementsByClassName("dislike-button")[0].classList.add('clicked-button');
+            disliked = true;
+        }
+    });
+    document.getElementsByClassName("cloud-button")[0].addEventListener("click", function() {
+        // request for a page url
+        
+    })
+}
+setOnclicks();
+
+
 
 // function getUserReact
 // purpose: check if a user has already reacted to a page,
