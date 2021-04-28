@@ -9,14 +9,10 @@ body{
 
 main{
     position:fixed;
-    width: 28rem;
-    height: 10rem;
-    top:0px;
-    bottom:0px;
-    right: 0px;
-    left:0px;
-    height:10rem;
-    margin:auto;
+    width: 14rem;
+    height: 5.5rem;
+    left: .5rem;
+    bottom: .5rem;
 }
 
 .overlay-contain{
@@ -36,23 +32,31 @@ main{
     top:0; 
     cursor: pointer;
 }
+.like-button, .dislike-button{
+    border-radius: 20%;
+}
+.like-button:hover, .dislike-button:hover{
+    background-color: darkgrey;
+}
 .like-button{
-    height: calc(100% - 6rem);
-    margin-top:2rem;
-    margin-bottom:4rem;
-    left: 2.5rem; 
+    height: 40%;
+    top: 15%;
+    left: 7%;
+    padding: 2%;
 }
 .dislike-button{
-    height: calc(100% - 6rem);
-    margin-top:4rem;
-    margin-bottom:2rem;
-    left: 8rem; 
+    height: 40%;
+    top: 35%;
+    left: 27%; 
+    padding: 2%;
+}
+.clicked-button{
+    background: #525252 !important;
 }
 .cloud-button{
-    height: calc(100% - 4rem);
-    margin-top:2rem;
-    margin-bottom:2rem; 
-    left: 14.5rem; 
+    height: 65%;
+    top: 17.5%;
+    left: 53%;
 }
 
 
