@@ -55,15 +55,19 @@ disliked = false;
 function handleClick(id, clicked){
     if (clicked && id == "dislike-button") {
         document.getElementsByClassName("dislike-button")[0].src = chrome.extension.getURL('../images/DislikeUnclicked.svg');
+        handleReact(2);
     }
     else if(clicked && id == "like-button") {
         document.getElementsByClassName("like-button")[0].src = chrome.extension.getURL('../images/LikeUnclicked.svg');
+        handleReact(2);
     }
     else if(!clicked && id == "dislike-button") {
         document.getElementsByClassName("dislike-button")[0].src = chrome.extension.getURL('../images/DislikeClicked.svg');
+        handleReact(1);
     }
     else if (!clicked && id == "like-button") {
         document.getElementsByClassName("like-button")[0].src = chrome.extension.getURL('../images/LikeClicked.svg');
+        handleReact(0);
     }
 }
 
