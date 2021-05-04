@@ -6,6 +6,10 @@
 // ------------------DATA-------------------------
 var buttonHTML = '<!-- contains the entire reaction button --> <div class = "overlay-contain"> <!-- contains the svgs for buttons and their corresponding containers --> <div class = "button-contain"> <!-- like button --> <img class = "like-button" src="../images/LikeUnclicked.svg" alt="like button (unclicked)"> <!-- dislike button --> <img class = "dislike-button" src="../images/DislikeUnclicked.svg" alt="dislike button (unclicked)"> <!-- cloud button --> <img class = "cloud-button" src="../images/Cloud.svg" alt="cloud / next page button"> </div> <!-- contains the background svgs for the buttons --> <div class = "background-contain"> <!-- gradient background --> <svg class = "gradient-background" viewBox="0 0 800 250" fill="none" xmlns="http://www.w3.org/2000/svg"> <g filter="url(#filter0_d)"> <rect width="700" height="250" rx="28" fill="#C4C4C4"/> <rect width="700" height="250" rx="28" fill="url(#paint0_linear)"/> </g> <defs> <filter id="filter0_d" x="0" y="0" width="700" height="250" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"> <feFlood flood-opacity="0" result="BackgroundImageFix"/> <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/> <feOffset dy="4"/> <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/> <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/> <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/> </filter> <linearGradient id="paint0_linear" x1="301" y1="0" x2="301" y2="241" gradientUnits="userSpaceOnUse"> <stop offset="0.0913884" stop-color="#B7094C"/> <stop offset="0.317708" stop-color="#892B64"/> <stop offset="0.541667" stop-color="#5C4D7D"/> <stop offset="1" stop-color="#2E6F95"/> </linearGradient> </defs> </svg> <!-- white box background --> <svg class = "white-background" viewBox="0 0 800 250" fill="none" xmlns="http://www.w3.org/2000/svg"> <g filter="url(#filter0_d)"> <rect width="650" height="250" rx="28" fill="white"/> <rect width="650" height="250" rx="28" fill="white"/> </g> <defs> <filter id="filter0_d" x="0" y="0" width="650" height="250" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"> <feFlood flood-opacity="0" result="BackgroundImageFix"/> <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/> <feOffset dy="4"/> <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/> <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/> <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/> </filter> </defs> </svg> </div> </div>'
 
+// cloudlink, which should get replaced by a request on page load
+// for now, the default is a portal milo found that goes to a bunch
+// of wacky sites
+var cloudLink = 'https://theuselessweb.com/'
 
 //-----------------ADD BUTTON TO PAGE--------------
 function appendButton(size) {
@@ -74,7 +78,14 @@ function handleClick(id, clicked){
 // function setOnclicks
 // purpose: ensures that all elements in the button have proper functionality
 // note that with 1 or 2 helper functions, this can be significantly modularized
+
+//TODO: LINK FOR CLOUDSURF BUTTON NEEDS TO BE RESET ONCE WE GET FROM SERVER
 function setOnclicks(){
+    //cloud button
+    document.getElementsByClassName("cloud-button")[0].addEventListener("click", function() {
+        window.location.href = cloudLink;
+    });
+    // like/dislike buttons
     document.getElementsByClassName("like-button")[0].addEventListener("click", function() {
         if (disliked) {
             handleClick("dislike-button", true)
@@ -183,6 +194,33 @@ function handleReact(reactType)
     console.log("data: ", data)
     var req = new XMLHttpRequest();
     req.open("POST","https://cloudsurf.herokuapp.com/react", true);
+    req.setRequestHeader("Content-type","application/json");
+    req.onload = function (e) {
+        if (req.readystate === 4) {
+            if (req.status === 200) {
+                console.log(req.responseText)
+            }
+            else{
+                console.error(req.statusText)
+            }
+        }
+    }
+    req.onerror = function (e) {
+        console.error(req.statusText)
+    };
+    req.send(JSON.stringify(data))
+    //closeReacts(reactType)
+}
+
+
+function getCloudLink(){
+    // send reaction request to backend
+    var data = {
+        userid:  userid
+    };
+    console.log("data: ", data)
+    var req = new XMLHttpRequest();
+    req.open("POST","https://cloudsurf.herokuapp.com/cloudlink", true);
     req.setRequestHeader("Content-type","application/json");
     req.onload = function (e) {
         if (req.readystate === 4) {
