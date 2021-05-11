@@ -5,6 +5,7 @@
     height: 5.5rem;
     left: .5rem;
     bottom: .5rem;
+    z-index: 2147483647;
 }
 .overlay-contain{
     width: inherit;

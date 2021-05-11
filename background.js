@@ -24,7 +24,6 @@ chrome.runtime.onInstalled.addListener(function() {
   });
 });
 
-
 // Below is the type of code that will be needed to detect
 // "soft reloads" on sites like YouTube, where the URL and
 // page changes but the page doesn't actually reload. 

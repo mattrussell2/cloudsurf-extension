@@ -83,8 +83,41 @@ function handleClick(id, clicked){
 function setOnclicks(){
     //cloud button
     document.getElementsByClassName("cloud-button")[0].addEventListener("click", function() {
-        window.location.href = cloudLink;
-    });
+        console.log("clicked cloud button");
+        console.log(userid)
+        var data = { userid:  userid }    
+        
+        var req = new XMLHttpRequest();
+        req.open("POST","https://cloudsurf.herokuapp.com/getRecommendations", true);
+        req.setRequestHeader("Content-type","application/json");
+        req.onload = function (e) {
+            console.log("loaded req")           
+            response = JSON.parse(req.responseText);  
+            console.log(response);
+            if (response.rows.length == 0) {
+                alert("you've surfed the whole cloud")
+                return
+            }else {
+                window.location.href = response.rows[0].url
+            }
+            if (req.readystate == 4) {
+                console.log("ready state is 4");
+                if (req.status == 200) {
+                    console.log("status 200");                    
+                }
+                else{
+                    console.log("status is not 200:" + req.statusText)
+                }
+            }
+        }
+        req.onerror = function (e) {
+            console.error(req.statusText)
+        };    
+        req.send(JSON.stringify(data))
+        //window.location.href = cloudLink
+    })
+
+
     // like/dislike buttons
     document.getElementsByClassName("like-button")[0].addEventListener("click", function() {
         if (disliked) {
@@ -157,15 +190,20 @@ function getUserReact(url, userid) {
         console.log(req.responseText);
         response = JSON.parse(req.responseText);  
         if(response["reaction"] != "None") {
-            setSelectedReact(response["reaction"])
+            if (response['reaction'] == 0) {
+                document.getElementsByClassName("like-button")[0].src = chrome.extension.getURL('../images/LikeClicked.svg');
+                document.getElementsByClassName("like-button")[0].classList.add('clicked-button');
+            }else if (response['reaction'] == 1) {
+                document.getElementsByClassName("dislike-button")[0].src = chrome.extension.getURL('../images/DislikeClicked.svg');
+                document.getElementsByClassName("dislike-button")[0].classList.add('clicked-button');
+            }
         }
         if (req.readystate === 4) {
             console.log("Ready state is 4.")
             if (req.status === 200) {
                 console.log("Request is returned.")
                 console.log(req.responseText)
-                 
-                set              
+                                      
                 if (!Object.keys(response).includes("response")){
                     makeEmojis(JSON.parse(xhr.response), div);                               
                 }
